@@ -43,7 +43,7 @@ const createRecipe = async (req, res) =>{
       const postRecipe = await createFood(name, image, description, healthScore, steps, diets) 
       res.status(200).json(postRecipe)
   } catch (error) {
-    res.status(400).json({error: "could not upload recipe"})
+    res.status(400).json({error: error.message})
 }
 }
 
